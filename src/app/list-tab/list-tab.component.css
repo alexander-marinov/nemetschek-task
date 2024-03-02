@@ -1,0 +1,17 @@
+
+.listItem .hidden-button {
+    visibility: hidden;
+}
+
+.listItem:hover .hidden-button {
+    visibility: visible;
+}
+
+.delete-button {
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+    border: none;
+    background: #980019;
+  }

@@ -1,0 +1,13 @@
+<form [formGroup]="dropdownForm" (keydown.enter)="$event.preventDefault()">
+    <div style="padding-bottom: 10px;">
+        <label for="fld1">field1</label>
+        <input id="fld1" type="text" formControlName="field1" style="width: 200px">
+    </div>
+    <div>
+        <label for="fld2">field2</label>
+        <select id="fld2" formControlName="field2" style="width: 209px">
+            <option value="value1">value1</option>
+            <option value="value2">value2</option>
+        </select>
+    </div>
+</form>

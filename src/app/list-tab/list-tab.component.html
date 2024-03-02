@@ -1,0 +1,27 @@
+<form (keydown.enter)="$event.preventDefault()">
+    <div style="padding-bottom: 10px;">
+        <label for="fld3">field3</label>
+        <input 
+            id="fld3" 
+            type="text" 
+            name="field3-text" 
+            [(ngModel)]="newElementText" 
+            (keydown.enter)="addToListCommand.execute($any($event.target).value)" 
+            style="width: 200px"
+            [disabled]="isDisabled || !addToListCommand.canExecute()">
+    </div>
+    <div>
+        <ol>
+            <li *ngFor="let item of elements; index as i;" class="listItem">
+                {{item}}
+                <button 
+                    *ngIf="!isDisabled" 
+                    title="remove" 
+                    class="hidden-button delete-button" 
+                    (click)="removefromListCommand.execute(i)">
+                    -
+                </button>    
+            </li>
+        </ol>
+    </div>
+</form>

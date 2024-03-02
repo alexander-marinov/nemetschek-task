@@ -1,0 +1,27 @@
+<main>
+
+  <div class="master-frame">
+    <div class="frame-content">
+      <div class="top-panel">
+        <button class="save-button"
+          type="submit" (click)="$event.preventDefault(); saveTabsCommand.execute()" [disabled]="!saveTabsCommand.canExecute()">
+          Save
+        </button>
+      </div>
+      <button [ngClass]="tabStyle('tab1')" type="button" (click)="$event.preventDefault(); activateTab('tab1')">Tab1</button>
+      <button [ngClass]="tabStyle('tab2')" type="button" (click)="$event.preventDefault(); activateTab('tab2')">Tab2</button>
+
+      <div class="tab-bar-content">
+        <div [hidden]="activeTab !== 'tab1'">
+          <dropdown-tab (formChangedEvent)="saveTabsCommand.handleFirstTabChanges($event)" [isDisabled]="saveTabsCommand.saveInProgress">
+          </dropdown-tab>
+        </div>
+        <div [hidden]="activeTab !== 'tab2'">
+          <list-tab (listChangedEvent)="saveTabsCommand.handleSecondTabChanges($event)" [isDisabled]="saveTabsCommand.saveInProgress">
+          </list-tab>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>

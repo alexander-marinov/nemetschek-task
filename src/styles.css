@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #070058;
+}
+label {
+    margin-right: 4px;
+}
+input {
+    border:1px solid #070058;
+    border-radius: 3px;
+    font-size:16px;
+}
+select {
+    border:1px solid #070058;
+    border-radius: 3px;
+    font-size:16px;
+}
+ol {
+    padding-inline-start: 68px;
+}
